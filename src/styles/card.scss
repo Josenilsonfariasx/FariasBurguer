@@ -1,0 +1,25 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    > .card_img {
+        width: 18.75rem;
+        height: 9.375rem;
+        flex-shrink: 0;
+        background: var(--grey-0);
+    }
+    > .card_info {
+        display: flex;
+        width: 18.75rem;
+        height: 12.25rem;
+        padding: 1.25rem;
+        align-items: flex-start;
+        gap: 0.625rem;
+        flex-shrink: 0; 
+    }
+
+    &:focus{
+        border-radius: 0.3125rem;
+        border: 2px solid var(--Sucess);
+        background: #FFF;
+    }
+}

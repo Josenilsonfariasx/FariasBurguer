@@ -1,0 +1,41 @@
+.title {
+    font-family: var(--font-primary);
+    line-height: 1.4;
+    font-weight: 700;
+
+    &.one {
+        font-size: clamp(1rem, 10vw, 1.625rem);
+    }
+    &.two {
+        font-size: clamp(0.875rem, 8vw, 1.375rem);
+    }
+    &.three {
+        font-size: clamp(0.625rem, 7vw, 1.125rem);
+    }
+    &.headline {
+        font-size: clamp(0.625rem, 7vw, 1rem);
+        font-weight: 400;
+    }
+    &.body {
+        font-weight: 400;
+        font-size: clamp(0.625rem, 7vw, 0.875rem);
+        &.b-600 {
+            font-weight: 600;
+        }
+    }
+    &.caption {
+        font-size: clamp(0.5rem, 7vw, 0.75rem);
+    }
+    &.sucess {
+        color: var(--Sucess);
+    }
+    &.grey {
+        color: var(--grey-300);
+    }
+    &.black {
+        color: var(--grey-600);
+    }
+    &.white {
+        color: var(--grey-100);
+    }
+}

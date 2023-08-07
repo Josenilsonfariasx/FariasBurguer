@@ -1,0 +1,17 @@
+.input {
+    display: inline-flex;
+    height: 3.75rem;
+    padding: 0rem 0.625rem 0rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5.9375rem;
+    flex-shrink: 0;
+
+    border-radius: 0.5rem;
+    border: 2px solid var(--gray-100);
+    background: #FFF;
+
+    &:focus {
+        border: 2px solid var(--grey-600);
+    }
+}
