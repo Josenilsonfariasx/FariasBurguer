@@ -1,0 +1,103 @@
+.header {
+    padding-top: 1.5rem; 
+    height: 9rem ;
+    background-color: var(--grey-0);
+
+    > div {
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+    }
+}
+
+.cardLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    > img {
+        width: 9.375rem;
+        height: 1.42825rem; 
+    }
+
+    > button {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        > span {
+            width: 18px;
+            height: 21px;
+            flex-shrink: 0;
+            border-radius: 0.4375rem; 
+            background-color: var(--color-primary);
+            top: -10px;
+            right: -5px;
+            position: absolute;
+        }
+    }
+}
+
+.search {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 5px;
+    margin: 0 auto;
+    
+    > form {
+        input {
+            position: relative;
+        }
+
+        > button {
+            position: fixed;
+            right: 30px;
+            top: 75px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media (min-width:880px){
+    .header {    
+        > div {
+            > div {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+    }
+
+    .cardLogo {
+        width: 75%;
+    
+        > button {
+            
+            > span {
+                top: -10px;
+                right: -5px;
+            }
+        }
+    }
+
+    .search {
+        width: 25%;
+        padding-right: 10px;
+
+        > form {
+            position: relative;
+    
+            > button {
+                position: absolute;
+                right: 0px;
+                top: 11px;
+            }
+        }
+    }
+}
