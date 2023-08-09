@@ -6,14 +6,16 @@
     align-items: center;
     gap: 0.625rem;
     flex-shrink: 0; 
+    border: none;
     border-radius: 0.5rem;
-    background: #BDBDBD;
+    background: #27ae60;
+    cursor: pointer;
 
     &.medium {
         height: 2.5rem;
     }
 
     &:hover {
-        background-color: var(--Sucess);
+        background-color:  #93d7af;
     }
 }
