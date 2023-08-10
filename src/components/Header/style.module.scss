@@ -99,5 +99,19 @@
                 top: 11px;
             }
         }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+
+            > span {
+                cursor: pointer;
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
     }
 }

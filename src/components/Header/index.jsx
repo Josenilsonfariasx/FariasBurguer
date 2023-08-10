@@ -40,6 +40,10 @@ export const Header = ({setVisible, visible, cartList, search, setSearch}) => {
                         <img src={searchimg} alt="" />
                      </button>
                   </form>
+               <div>
+                  {search ? <span className="title body grey">Buscando por: {search}</span> : null}
+                  {search ? <span id="sp" className="title body grey" onClick={()=> {setValue(''), setSearch('')}}>Limpar filtros</span> : null}
+               </div>
                </div>
             </div>
          </div>
