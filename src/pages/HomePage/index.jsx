@@ -6,13 +6,13 @@ import { api } from "../../services/api";
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
+   const savedCartList = JSON.parse(localStorage.getItem('@humburgueriaKenzie'))
    const [cartList, setCartList] = useState([]);
    const [visible, setVisible] = useState(false)
    
    useEffect(()=>{   
-      const savedCartList = JSON.parse(localStorage.getItem('@humburgueriaKenzie'))
-      savedCartList ? setCartList(savedCartList) : null
-
+      setCartList(savedCartList)
+      
       const getProducts = async () =>{
          const {data} = await api.get()
          setProductList(data)
