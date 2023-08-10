@@ -37,7 +37,7 @@ export const HomePage = () => {
    return (
       <DefaultTemplate setVisible={setVisible} visible={visible} cartList={cartList}>
             <ProductList productList={productList} cartList={cartList} setCartList={setCartList}/>
-            {visible ? <CartModal setVisible={setVisible} cartList={cartList} /> : null}
+            {visible ? <CartModal setVisible={setVisible} cartList={cartList} setCartList={setCartList} /> : null}
       </DefaultTemplate>
    );
 };

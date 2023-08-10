@@ -3,7 +3,15 @@ import close from "../../assets/x.svg";
 import { CartItemCard } from "./CartItemCard";
 import style from "./style.module.scss"
 
-export const CartModal = ({ cartList, setVisible}) => {
+export const CartModal = ({ cartList, setVisible, setCartList}) => {
+
+   const removeAllItemsCart = ()=>{
+      let remove = cartList.filter((cart)=>{
+         return cart.id === ''
+      })
+      setCartList(remove)
+   }
+
    const [len, setLen] = useState(false)
 
    const closeModal = () =>{
@@ -38,7 +46,7 @@ export const CartModal = ({ cartList, setVisible}) => {
                   <span className="title four black">Total</span>
                   <span className="title grey">{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
                </div>
-               <button className="button">Remover todos</button>
+               <button className="button" onClick={()=>{removeAllItemsCart()}}>Remover todos</button>
             </div>
          </div>
       </div>
