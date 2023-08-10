@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+    align-self: center;
+    justify-content: center;
     > li {
         display: flex;
         flex-direction: column;
@@ -51,5 +53,11 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width:880px){
+    .ul {
+        justify-content: flex-start;
     }
 }

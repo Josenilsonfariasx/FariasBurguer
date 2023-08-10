@@ -35,12 +35,6 @@ export const HomePage = () => {
       } 
       saveLocalStorageCartList()
    },[cartList])
-   // useEffect montagem - carrega os produtos da API e joga em productList
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-   // adição, exclusão, e exclusão geral do carrinho
-   // renderizações condições e o estado para exibir ou não o carrinho
-   // filtro de busca
-   // estilizar tudo com sass de forma responsiva
 
    return (
       <DefaultTemplate setVisible={setVisible} visible={visible} cartList={cartList} search={search} setSearch={setSearch}>
