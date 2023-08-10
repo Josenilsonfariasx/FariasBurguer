@@ -36,7 +36,7 @@ export const CartModal = ({ cartList, setVisible, setCartList}) => {
                ): (
                   <ul>
                      {cartList.map((product) => (
-                        <CartItemCard key={product.id} product={product} len={len} setLen={setLen}/>
+                        <CartItemCard key={product.id} product={product} cartList={cartList} setCartList={setCartList} />
                      ))}
                   </ul>
                   )}

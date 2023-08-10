@@ -1,9 +1,12 @@
 import { MdDelete } from "react-icons/md";
 import style from "./style.module.scss"
 
-export const CartItemCard = ({ product, len, setLen }) => {
+export const CartItemCard = ({ product, cartList, setCartList}) => {
    const removeItensCart = () =>{
-      localStorage.clear()
+      let remove = cartList.filter((cart)=>{
+         return cart.id !== product.id
+      })
+      setCartList(remove)   
    }
    return (
       <li className={style.li}>
