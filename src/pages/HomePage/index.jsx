@@ -9,10 +9,18 @@ export const HomePage = () => {
    const savedCartList = JSON.parse(localStorage.getItem('@humburgueriaKenzie'))
    const [cartList, setCartList] = useState([]);
    const [visible, setVisible] = useState(false)
+   const [search, setSearch] = useState('')
+
+      const filter = productList.filter((product)=>{
+         const filterSearch = search === "" ? productList :
+         product.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
+         product.category.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      
+         return filterSearch
+      })
    
    useEffect(()=>{   
       setCartList(savedCartList)
-      
       const getProducts = async () =>{
          const {data} = await api.get()
          setProductList(data)
@@ -35,8 +43,8 @@ export const HomePage = () => {
    // estilizar tudo com sass de forma responsiva
 
    return (
-      <DefaultTemplate setVisible={setVisible} visible={visible} cartList={cartList}>
-            <ProductList productList={productList} cartList={cartList} setCartList={setCartList}/>
+      <DefaultTemplate setVisible={setVisible} visible={visible} cartList={cartList} search={search} setSearch={setSearch}>
+            <ProductList productList={filter} cartList={cartList} setCartList={setCartList}/>
             {visible ? <CartModal setVisible={setVisible} cartList={cartList} setCartList={setCartList} /> : null}
       </DefaultTemplate>
    );

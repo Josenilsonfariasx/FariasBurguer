@@ -1,10 +1,15 @@
 import { useState } from "react";
-import search from "../../assets/search.svg"
+import searchimg from "../../assets/search.svg"
 import Logo from "../../assets/Logo.svg";
 import car from "../../assets/car.svg"
 import style from "./style.module.scss"
-export const Header = ({setVisible, visible, cartList}) => {
+export const Header = ({setVisible, visible, cartList, search, setSearch}) => {
    const [value, setValue] = useState("");
+
+   const submit = (e)=>{
+      e.preventDefault()
+      setSearch(value)
+   }
 
    const openModal = () =>{
       if(visible){
@@ -31,8 +36,8 @@ export const Header = ({setVisible, visible, cartList}) => {
                         onChange={(e) => setValue(e.target.value)}
                         className="input"
                         />
-                     <button type="submit" className="button medium">
-                        <img src={search} alt="" />
+                     <button type="submit" className="button medium" onClick={(e)=>{submit(e)}}>
+                        <img src={searchimg} alt="" />
                      </button>
                   </form>
                </div>
