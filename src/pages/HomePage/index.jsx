@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartModal } from "../../components/CartModal";
 import { ProductList } from "../../components/ProductList";
 import { DefaultTemplate } from "../../components/DefaultTemplate";
+import { api } from "../../services/api";
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
    const [visible, setVisible] = useState(false)
 
+   useEffect(()=>{
+      const getProducts = async () =>{
+         const {data} = await api.get()
+         setProductList(data)
+      }
+      getProducts()
+   },[])
    // useEffect montagem - carrega os produtos da API e joga em productList
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
    // adição, exclusão, e exclusão geral do carrinho
