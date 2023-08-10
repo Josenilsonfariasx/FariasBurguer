@@ -3,7 +3,7 @@ import search from "../../assets/search.svg"
 import Logo from "../../assets/Logo.svg";
 import car from "../../assets/car.svg"
 import style from "./style.module.scss"
-export const Header = ({setVisible, visible}) => {
+export const Header = ({setVisible, visible, cartList}) => {
    const [value, setValue] = useState("");
 
    const openModal = () =>{
@@ -20,7 +20,7 @@ export const Header = ({setVisible, visible}) => {
                   <img src={Logo} alt="Logo Kenzie Burguer" />
                   <button>
                      <img src={car} alt=""  onClick={()=>{openModal()}}/>
-                     <span className="title body b-600 white" onClick={()=>{openModal()}} >0</span>
+                     <span className="title body b-600 white" onClick={()=>{openModal()}} >{cartList.length}</span>
                   </button>
                </div>
                <div className={style.search}>
