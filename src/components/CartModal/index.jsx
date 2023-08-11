@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import close from "../../assets/x.svg";
 import { CartItemCard } from "./CartItemCard";
 import style from "./style.module.scss"
@@ -7,26 +7,42 @@ import { toast } from "react-toastify";
 export const CartModal = ({ cartList, setVisible, setCartList}) => {
 
    const removeAllItemsCart = ()=>{
-      let remove = cartList.filter((cart)=>{
-         
+      let remove = cartList.filter((cart)=>{         
          return cart.id === ''
       })
       remove ? toast.success('Limpamos seu carrinho de compras 🛒') : null
       setCartList(remove)
    }
 
-   const [len, setLen] = useState(false)
-
    const closeModal = () =>{
       setVisible(false)
    }
+
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
 
+
+
+   const refModal = useRef(null)
+   
+   useEffect(()=>{
+
+      const modalClick = (e) =>{  
+         !refModal.current?.contains(e.target) ? setVisible(false) : null
+      }
+
+      window.addEventListener('mousedown', modalClick)
+      
+      
+      return ()=>{
+            window.removeEventListener('mousedown', modalClick)
+      }
+   }, [])
+
    return (
       <div role="dialog" className={style.modalOverlay}>
-         <div className={style.modal}>
+         <div ref={refModal} className={style.modal}>
             <div className={style.modalHeader}>
                <h2 className="title three white">Carrinho de compras</h2>
                <button aria-label="close" title="Fechar" onClick={()=>{closeModal()}}>
