@@ -13,6 +13,7 @@ export const ProductCard = ({ product,cartList, setCartList }) => {
                 toast.success('Adicionado com sucesso 🥃 ')
             }
         }else{
+            toast.warning('Ja adicionou esse item 😡😡')
         }
     }
     return(
