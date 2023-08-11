@@ -1,3 +1,4 @@
+import { toast } from "react-toastify"
 import style from  "./style.module.scss"
 
 export const ProductCard = ({ product,cartList, setCartList }) => {
@@ -5,6 +6,12 @@ export const ProductCard = ({ product,cartList, setCartList }) => {
         if(!cartList.some((cart)=> cart.id === product.id)){
             let addNewProduct = [...cartList, product]
             setCartList(addNewProduct)
+            if(product.category === 'Sanduíches'){
+                toast.success('Adicionado com sucesso 🍔')
+            }
+            else {
+                toast.success('Adicionado com sucesso 🥃 ')
+            }
         }else{
         }
     }

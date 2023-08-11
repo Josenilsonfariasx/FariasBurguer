@@ -2,13 +2,16 @@ import { useState } from "react";
 import close from "../../assets/x.svg";
 import { CartItemCard } from "./CartItemCard";
 import style from "./style.module.scss"
+import { toast } from "react-toastify";
 
 export const CartModal = ({ cartList, setVisible, setCartList}) => {
 
    const removeAllItemsCart = ()=>{
       let remove = cartList.filter((cart)=>{
+         
          return cart.id === ''
       })
+      remove ? toast.success('Limpamos seu carrinho de compras 🛒') : null
       setCartList(remove)
    }
 
