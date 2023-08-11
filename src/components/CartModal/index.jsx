@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import close from "../../assets/x.svg";
 import { CartItemCard } from "./CartItemCard";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 import { toast } from "react-toastify";
 
 export const CartModal = ({ cartList, setVisible, setCartList}) => {
 
    const removeAllItemsCart = ()=>{
       let remove = cartList.filter((cart)=>{         
-         return cart.id === ''
+         return cart.id === ""
       })
-      remove ? toast.success('Limpamos seu carrinho de compras 🛒') : null
+      remove ? toast.success("Limpamos seu carrinho de compras 🛒") : null
       setCartList(remove)
    }
 
@@ -32,11 +32,11 @@ export const CartModal = ({ cartList, setVisible, setCartList}) => {
          !refModal.current?.contains(e.target) ? setVisible(false) : null
       }
 
-      window.addEventListener('mousedown', modalClick)
+      window.addEventListener("mousedown", modalClick)
       
       
       return ()=>{
-            window.removeEventListener('mousedown', modalClick)
+            window.removeEventListener("mousedown", modalClick)
       }
    }, [])
 
@@ -63,7 +63,7 @@ export const CartModal = ({ cartList, setVisible, setCartList}) => {
             <div className={style.modalFooter}>
                <div>
                   <span className="title four black">Total</span>
-                  <span className="title grey">{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+                  <span className="title grey">{total.toLocaleString("pt-BR", { style: "currency", currency: "BRL"})}</span>
                </div>
                <button className="button" onClick={()=>{removeAllItemsCart()}}>Remover todos</button>
             </div>

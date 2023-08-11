@@ -1,5 +1,5 @@
 import { MdDelete } from "react-icons/md";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 import { toast } from "react-toastify";
 
 export const CartItemCard = ({ product, cartList, setCartList}) => {
@@ -7,7 +7,7 @@ export const CartItemCard = ({ product, cartList, setCartList}) => {
       let remove = cartList.filter((cart)=>{
          return cart.id !== product.id
       })
-      remove ? toast.success('Retiramos o item do seu carrinho 🛒') : null 
+      remove ? toast.success("Retiramos o item do seu carrinho 🛒") : null 
       setCartList(remove)   
    }
    return (

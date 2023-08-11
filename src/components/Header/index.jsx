@@ -1,7 +1,7 @@
 import { useState } from "react";
-import searchimg from "../../assets/search.svg"
+import searchimg from "../../assets/search.svg";
 import Logo from "../../assets/Logo.svg";
-import car from "../../assets/car.svg"
+import car from "../../assets/car.svg";
 import style from "./style.module.scss"
 export const Header = ({setVisible, visible, cartList, search, setSearch}) => {
    const [value, setValue] = useState("");
@@ -42,7 +42,7 @@ export const Header = ({setVisible, visible, cartList, search, setSearch}) => {
                   </form>
                <div>
                   {search ? <span className="title body grey">Buscando por: {search}</span> : null}
-                  {search ? <span id="sp" className="title body grey" onClick={()=> {setValue(''), setSearch('')}}>Limpar filtros</span> : null}
+                  {search ? <span id="sp" className="title body grey" onClick={()=> {setValue(""), setSearch("")}}>Limpar filtros</span> : null}
                </div>
                </div>
             </div>

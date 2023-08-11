@@ -1,4 +1,4 @@
-import { Header } from "../Header"
+import { Header } from "../Header";
 
 export const DefaultTemplate = ({children, setVisible, visible, cartList, search, setSearch}) =>{
     return (

@@ -6,10 +6,10 @@ import { api } from "../../services/api";
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
-   const savedCartList = JSON.parse(localStorage.getItem('@humburgueriaKenzie'))
+   const savedCartList = JSON.parse(localStorage.getItem("@humburgueriaKenzie"))
    const [cartList, setCartList] = useState([]);
    const [visible, setVisible] = useState(false)
-   const [search, setSearch] = useState('')
+   const [search, setSearch] = useState("")
 
       const filter = productList.filter((product)=>{
          const filterSearch = search === "" ? productList :
@@ -31,7 +31,7 @@ export const HomePage = () => {
 
    useEffect(()=>{
       const saveLocalStorageCartList = () =>{
-         localStorage.setItem('@humburgueriaKenzie', JSON.stringify(cartList))
+         localStorage.setItem("@humburgueriaKenzie", JSON.stringify(cartList))
       } 
       saveLocalStorageCartList()
    },[cartList])
