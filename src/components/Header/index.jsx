@@ -2,7 +2,7 @@ import { useState } from "react";
 import searchimg from "../../assets/search.svg";
 import Logo from "../../assets/Logo.svg";
 import car from "../../assets/car.svg";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 export const Header = ({setVisible, visible, cartList, search, setSearch}) => {
    const [value, setValue] = useState("");
 
